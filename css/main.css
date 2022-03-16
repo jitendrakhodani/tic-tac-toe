@@ -1,0 +1,69 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --cellX-background-color: #83acd3;
+  --cellO-background-color: #06223d;
+}
+
+body {
+  margin: 100px auto;
+  min-height: 100vh;
+}
+
+.container {
+  width: 30%;
+  margin: auto;
+}
+.board {
+  display: grid;
+  grid-template: repeat(auto-fit, minmax(33%, 1fr)) / repeat(
+      auto-fit,
+      minmax(33%, 1fr)
+    );
+
+  color: #766b6b;
+  min-height: 500px;
+  gap: 2px;
+  background: #766b6b;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: white;
+  font-size: 4em;
+  font-family: sans-serif;
+}
+
+.cellX {
+  cursor: not-allowed;
+}
+.cellX::after {
+  /* background-color: var(--cellX-background-color); */
+  content: "X";
+}
+
+.cellO {
+  cursor: not-allowed;
+}
+.cellO::after {
+  /* background-color: var(--cellO-background-color); */
+  content: "O";
+  cursor: not-allowed;
+}
+
+.button {
+  width: 150px;
+  height: 30px;
+  background: #1088da;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1em;
+}

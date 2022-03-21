@@ -4,26 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tic Tak Toe</title>
+    <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="board" id="board">
-        <div id="cell1" class="cell"></div>
-        <div id="cell2" class="cell"></div>
-        <div id="cell3" class="cell"></div>
-        <div id="cell4" class="cell"></div>
-        <div id="cell5" class="cell"></div>
-        <div id="cell6" class="cell"></div>
-        <div id="cell7" class="cell"></div>
-        <div id="cell8" class="cell"></div>
-        <div id="cell9" class="cell"></div>
+    <section class="game-container">
+      <h1 class="game-title">Play Tic Tac Toe</h1>
+      <div class="currentGameStatus"></div>
+      <div class="game-status-message-container"></div>
+      <div class="board">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
       </div>
-      <div>
+      <div class="game-actions">
         <button type="button" class="button" id="resetButton">Reset</button>
       </div>
-    </div>
+    </section>
     <script src="js/main.js"></script>
   </body>
 </html>

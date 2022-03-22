@@ -11,9 +11,13 @@ const domUtils = {
 };
 
 (function () {
+  // dom references
   const doc = document;
   const board = doc.getElementsByClassName("board")[0];
   const allCells = doc.getElementsByClassName("cell");
+  const gameStatusContainer =
+    doc.getElementsByClassName("currentGameStatus")[0];
+
   const winingCombinations = [
     [0, 1, 2],
     [3, 4, 5],
@@ -26,16 +30,17 @@ const domUtils = {
   ];
   const palyerXClass = "cellX";
   const playerOClass = "cellO";
-  const gameStatusContainer =
-    doc.getElementsByClassName("currentGameStatus")[0];
+
   let activePlayerClass = palyerXClass;
+
   const flipPlayer = () => {
     activePlayerClass =
       activePlayerClass === palyerXClass ? playerOClass : palyerXClass;
   };
+
   const markCell = (cellEl, className) => domUtils.addClass(cellEl, className);
 
-  const resetBoard = () => {
+  const resetBoardClickHandler = () => {
     [...allCells].forEach(cell => {
       domUtils.removeClass(cell, palyerXClass);
       domUtils.removeClass(cell, playerOClass);
@@ -51,6 +56,8 @@ const domUtils = {
       });
     });
   };
+
+  const isDraw = () => {};
 
   const updateGameStatus = activePlayerClass => {
     const nextPlayer =
@@ -90,5 +97,5 @@ const domUtils = {
   };
 
   board.addEventListener("click", cellClickHandler);
-  resetButton.addEventListener("click", resetBoard);
+  resetButton.addEventListener("click", resetBoardClickHandler);
 })();
